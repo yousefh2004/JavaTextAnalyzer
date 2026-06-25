@@ -1,0 +1,29 @@
+Question 1 : Why is StringBuilder preferred over string concatenation (+=) inside loops?
+Answer: Because in java String can never be changed after created , so typing += will create new object and
+its a big problem when doing this inside a loop which will slow the application.
+
+Question 2 : For each method below, explain which collection you selected and why:
+             getAllWords()
+             getUniqueWords()
+             getWordFrequency()
+             containsBothWords()
+Answer:
+getAllWords()=> List selected because we need to keep duplicates and keep the order.
+getUniqueWords()=> HashSet selected because order does not matter and duplicates are not allowed.
+getWordFrequency()=> HashMap selected because we need key,value so Map is the only collection that supports this
+key-value relationship directly.
+containsBothWords()=> HashSet selected because order does not matter what does matter is existence only.
+
+Question 3 : Name one Java built-in method that you had never used before this assignment and
+explain what it does.
+Answer: Map.getOrDefault(key, defaultValue) , I have never use it before , it returns the value with a key
+if that key exist in the map or returns default value if the key is not present so instead of checking with
+if else statement whether the word is already in the map.
+
+Question 4 : Name one place where you could have written manual logic but instead used a Java
+built-in feature.
+Explain what benefit it provided.
+Answer: In getUniqueWords() , I could have used a nested loop or contains to and looped through the
+words and add only if it was not already in the list , so instead of that I passed the
+words directly into a HashSet: return new HashSet<>(getCleanWords());
+and it automatically remove the duplication so not only short but also fast since the check will be O(1).
